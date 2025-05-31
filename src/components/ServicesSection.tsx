@@ -1,5 +1,4 @@
-
-import { Building, Shield, Wrench, Layers, Eye, Hammer } from 'lucide-react';
+import { Building, Shield, Wrench, Layers, Eye, Hammer, ArrowRight } from 'lucide-react';
 
 const ServicesSection = () => {
   const services = [
