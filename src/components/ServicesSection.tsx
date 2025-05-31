@@ -1,3 +1,4 @@
+
 import { Building, Shield, Wrench, Layers, Eye, Hammer, ArrowRight } from 'lucide-react';
 
 const ServicesSection = () => {
@@ -71,49 +72,52 @@ const ServicesSection = () => {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div 
-              key={service.title}
-              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Service Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-steel-dark/80 to-transparent"></div>
-                
-                {/* Icon Overlay */}
-                <div className="absolute top-4 right-4 w-12 h-12 bg-industrial-blue/20 backdrop-blur-sm border border-industrial-blue/30 rounded-xl flex items-center justify-center group-hover:bg-industrial-blue/40 transition-all duration-300">
-                  <service.icon className="w-6 h-6 text-industrial-blue group-hover:text-white transition-colors" />
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <div 
+                key={service.title}
+                className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {/* Service Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-steel-dark/80 to-transparent"></div>
+                  
+                  {/* Icon Overlay */}
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-industrial-blue/20 backdrop-blur-sm border border-industrial-blue/30 rounded-xl flex items-center justify-center group-hover:bg-industrial-blue/40 transition-all duration-300">
+                    <IconComponent className="w-6 h-6 text-industrial-blue group-hover:text-white transition-colors" />
+                  </div>
                 </div>
-              </div>
 
-              {/* Service Content */}
-              <div className="p-6">
-                <h3 className="font-poppins font-bold text-xl text-white mb-3 group-hover:text-industrial-blue transition-colors">
-                  {service.title}
-                </h3>
-                <p className="font-inter text-industrial-silver leading-relaxed group-hover:text-white transition-colors">
-                  {service.description}
-                </p>
+                {/* Service Content */}
+                <div className="p-6">
+                  <h3 className="font-poppins font-bold text-xl text-white mb-3 group-hover:text-industrial-blue transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="font-inter text-industrial-silver leading-relaxed group-hover:text-white transition-colors">
+                    {service.description}
+                  </p>
 
-                {/* Hover Arrow */}
-                <div className="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <span className="text-industrial-blue font-inter font-semibold text-sm flex items-center">
-                    Learn More 
-                    <ArrowRight className="ml-1 w-4 h-4" />
-                  </span>
+                  {/* Hover Arrow */}
+                  <div className="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <span className="text-industrial-blue font-inter font-semibold text-sm flex items-center">
+                      Learn More 
+                      <ArrowRight className="ml-1 w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Decorative Element */}
-              <div className="h-1 bg-gradient-to-r from-transparent via-industrial-blue to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-          ))}
+                {/* Decorative Element */}
+                <div className="h-1 bg-gradient-to-r from-transparent via-industrial-blue to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Bottom CTA */}
