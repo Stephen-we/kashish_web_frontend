@@ -1,35 +1,34 @@
-
 import { Building, Shield, Wrench, Layers, Eye, Hammer, ArrowRight } from 'lucide-react';
-
+import { assets } from '../assets/assets';
 const ServicesSection = () => {
   const services = [
     {
       icon: Shield,
       title: "SS Railings",
       description: "Premium stainless steel railings with modern designs and superior durability for residential and commercial spaces.",
-      image: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+     image: assets.ss_railing,
     },
     {
       icon: Eye,
       title: "Glass Railings",
       description: "Elegant glass railing systems that provide safety without compromising aesthetic appeal and natural light flow.",
-      image: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: assets.glass_railing,
     },
     {
       icon: Layers,
-      title: "ACP Paneling",
-      description: "High-quality Aluminum Composite Panel installation for modern façades with weather-resistant properties.",
-      image: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      title: "Window Solutions",
+      description: "Energy-efficient sliding and casement windows for perfect fit and reduced energy and noise",
+      image: assets.window_solution,
     },
     {
       icon: Building,
-      title: "Window Fabrication",
+      title: "Custom Metal Works",
       description: "Custom window manufacturing and installation using premium materials for optimal performance and style.",
-      image: "https://images.unsplash.com/photo-1439337153520-7082a56a81f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: assets.custom_metal,
     },
     {
       icon: Wrench,
-      title: "Façade Work",
+      title: "Facade Work",
       description: "Complete façade solutions including design, fabrication, and installation for commercial and residential buildings.",
       image: "https://images.unsplash.com/photo-1497604401993-f2e922e5cb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },

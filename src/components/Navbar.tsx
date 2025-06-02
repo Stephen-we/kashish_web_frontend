@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -72,7 +71,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-sm text-industrial-silver">
               <Phone size={16} />
-              <span>+91 9876543210</span>
+              <span>+91  9763328158</span>
             </div>
             <Button 
               onClick={() => scrollToSection('contact')}
@@ -128,7 +127,7 @@ const Navbar = () => {
               <div className="pt-4 border-t border-steel-light/20">
                 <div className="flex items-center space-x-2 text-sm text-industrial-silver mb-4">
                   <Phone size={16} />
-                  <span>+91 9876543210</span>
+                  <span>+91  9763328158</span>
                 </div>
                 <Button 
                   onClick={() => scrollToSection('contact')}

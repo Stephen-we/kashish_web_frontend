@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Shield, Award, Users } from 'lucide-react';
 
