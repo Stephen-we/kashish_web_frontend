@@ -1,15 +1,19 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const handleScroll = () => {
+    if (window.scrollY > 30) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -17,135 +21,65 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const yOffset = -80; // navbar height
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
       setIsOpen(false);
     }
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-steel-dark/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-              <img 
-           src="/logo.png" 
-         alt="Kashish Enterprises Logo" 
-       className="h-20 w-auto object-contain"
-       />
-     </div>
-
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('home')}
-              className="text-white hover:text-industrial-blue transition-colors duration-200 font-inter"
-            >
-              Home
-            </button>
-            <button 
-              onClick={() => scrollToSection('services')}
-              className="text-white hover:text-industrial-blue transition-colors duration-200 font-inter"
-            >
-              Services
-            </button>
-            <button 
-              onClick={() => scrollToSection('about')}
-              className="text-white hover:text-industrial-blue transition-colors duration-200 font-inter"
-            >
-              About
-            </button>
-            <button 
-              onClick={() => scrollToSection('projects')}
-              className="text-white hover:text-industrial-blue transition-colors duration-200 font-inter"
-            >
-              Projects
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="text-white hover:text-industrial-blue transition-colors duration-200 font-inter"
-            >
-              Contact
-            </button>
-          </div>
-
-          {/* Contact Info & CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm text-industrial-silver">
-              <Phone size={16} />
-              <span>+91  9763328158</span>
-            </div>
-            <Button 
-              onClick={() => scrollToSection('contact')}
-              className="bg-industrial-blue hover:bg-blue-600 text-white px-6 py-2 rounded-lg transition-all duration-200"
-            >
-              Get Quote
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white hover:text-industrial-blue transition-colors"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-steel-dark/80 backdrop-blur-md shadow-md' : 'bg-transparent'
+      }`}
+    >
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+        {/* Logo */}
+        <div className="text-white text-xl font-bold tracking-wide">
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="h-10 w-auto object-contain"
+          />
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden bg-steel-dark/95 backdrop-blur-md border-t border-steel-light/20">
-            <div className="px-4 py-6 space-y-4">
-              <button 
-                onClick={() => scrollToSection('home')}
-                className="block w-full text-left text-white hover:text-industrial-blue transition-colors py-2 font-inter"
-              >
-                Home
-              </button>
-              <button 
-                onClick={() => scrollToSection('services')}
-                className="block w-full text-left text-white hover:text-industrial-blue transition-colors py-2 font-inter"
-              >
-                Services
-              </button>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="block w-full text-left text-white hover:text-industrial-blue transition-colors py-2 font-inter"
-              >
-                About
-              </button>
-              <button 
-                onClick={() => scrollToSection('projects')}
-                className="block w-full text-left text-white hover:text-industrial-blue transition-colors py-2 font-inter"
-              >
-                Projects
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="block w-full text-left text-white hover:text-industrial-blue transition-colors py-2 font-inter"
-              >
-                Contact
-              </button>
-              <div className="pt-4 border-t border-steel-light/20">
-                <div className="flex items-center space-x-2 text-sm text-industrial-silver mb-4">
-                  <Phone size={16} />
-                  <span>+91  9763328158</span>
-                </div>
-                <Button 
-                  onClick={() => scrollToSection('contact')}
-                  className="w-full bg-industrial-blue hover:bg-blue-600 text-white py-2 rounded-lg transition-all duration-200"
-                >
-                  Get Quote
-                </Button>
-              </div>
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex space-x-8 text-white font-inter text-base">
+          {['home', 'projects', 'services', 'contact'].map((link) => (
+            <li
+              key={link}
+              className="cursor-pointer hover:text-industrial-yellow transition-all duration-200"
+              onClick={() => scrollToSection(link)}
+            >
+              {link.charAt(0).toUpperCase() + link.slice(1)}
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden text-white">
+          <button onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-steel-dark/90 text-white px-6 py-4 space-y-4">
+          {['home', 'projects', 'services', 'contact'].map((link) => (
+            <div
+              key={link}
+              className="cursor-pointer hover:text-industrial-yellow transition-all duration-200"
+              onClick={() => scrollToSection(link)}
+            >
+              {link.charAt(0).toUpperCase() + link.slice(1)}
             </div>
-          </div>
-        )}
-      </div>
-    </nav>
+          ))}
+        </div>
+      )}
+    </header>
   );
 };
 
