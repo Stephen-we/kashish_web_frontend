@@ -5,7 +5,7 @@ const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const yOffset = -80; // Adjust if your navbar height changes
+      const yOffset = -80;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
@@ -37,7 +37,7 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-20 container mx-auto px-4 text-center">
+      <div className="relative z-20 container mx-auto px-4 text-center pb-28 sm:pb-0">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="font-poppins font-bold text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight">
             We Build with{' '}
