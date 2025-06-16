@@ -1,4 +1,3 @@
-
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
@@ -44,34 +43,27 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           
-          {/* Company Info */}
+          {/* Company Info with Logo */}
           <div className="lg:col-span-1">
-            <div className="font-poppins font-bold text-2xl text-white mb-4">
-              Kashish <span className="text-industrial-blue">Enterprises</span>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Kashish Enterprises Logo" 
+              className="h-35 w-auto mb-6"
+            />
             <p className="font-inter text-industrial-silver leading-relaxed mb-6">
               Premium stainless steel and glass fabrication specialists with over 15 years of 
               experience in delivering exceptional architectural solutions.
             </p>
-            
+
             {/* Social Links */}
             <div className="flex space-x-4">
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-white/10 hover:bg-industrial-blue border border-white/20 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
-              >
+              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-industrial-blue border border-white/20 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110">
                 <Facebook className="w-5 h-5 text-white" />
               </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-white/10 hover:bg-industrial-blue border border-white/20 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
-              >
+              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-industrial-blue border border-white/20 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110">
                 <Instagram className="w-5 h-5 text-white" />
               </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-white/10 hover:bg-industrial-blue border border-white/20 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
-              >
+              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-industrial-blue border border-white/20 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110">
                 <Linkedin className="w-5 h-5 text-white" />
               </a>
             </div>
@@ -118,15 +110,14 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-industrial-blue mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-inter text-white font-medium">+91 9876543210</p>
-                  <p className="font-inter text-industrial-silver text-sm">Mon-Sat 9AM-6PM</p>
+                  <p className="font-inter text-white font-medium">97633 28158</p>
                 </div>
               </div>
               
               <div className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-industrial-blue mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-inter text-white font-medium">info@kashishenterprises.com</p>
+                  <p className="font-inter text-white font-medium">kashishenterprises7@gmail.com</p>
                   <p className="font-inter text-industrial-silver text-sm">24/7 Support</p>
                 </div>
               </div>
@@ -134,8 +125,8 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-industrial-blue mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-inter text-white font-medium">123 Industrial Area</p>
-                  <p className="font-inter text-industrial-silver text-sm">New Delhi, India - 110001</p>
+                  <p className="font-inter text-white font-medium">504, Borate Wasti, Opp Ganesh Mandir</p>
+                  <p className="font-inter text-industrial-silver text-sm">Pune-Nashik Highway, Moshi – 412105</p>
                 </div>
               </div>
             </div>
@@ -148,7 +139,6 @@ const Footer = () => {
             <div className="font-inter text-industrial-silver text-sm mb-4 md:mb-0">
               © 2024 Kashish Enterprises. All rights reserved.
             </div>
-            
             <div className="flex items-center space-x-6">
               <button 
                 onClick={() => scrollToSection('contact')}

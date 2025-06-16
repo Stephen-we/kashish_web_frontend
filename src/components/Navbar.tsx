@@ -29,9 +29,14 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="font-poppins font-bold text-xl text-white">
-            Kashish <span className="text-industrial-blue">Enterprises</span>
-          </div>
+          <div className="flex items-center">
+              <img 
+           src="/logo.png" 
+         alt="Kashish Enterprises Logo" 
+       className="h-20 w-auto object-contain"
+       />
+     </div>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

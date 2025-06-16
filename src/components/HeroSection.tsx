@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Shield, Award, Users } from 'lucide-react';
+import { ArrowRight, Award } from 'lucide-react';
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -34,11 +34,6 @@ const HeroSection = () => {
       {/* Main Content */}
       <div className="relative z-20 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto animate-fade-in">
-          {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-industrial-blue/20 backdrop-blur-sm border border-industrial-blue/30 rounded-full px-6 py-2 mb-8">
-            <Award className="w-4 h-4 text-industrial-blue" />
-            <span className="text-sm font-inter text-white">15+ Years of Excellence</span>
-          </div>
 
           {/* Main Headline */}
           <h1 className="font-poppins font-bold text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight">
@@ -77,36 +72,10 @@ const HeroSection = () => {
             </Button>
             <Button 
               onClick={() => scrollToSection('projects')}
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-steel-dark px-8 py-4 rounded-xl font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105"
+              className="bg-industrial-yellow text-steel-dark hover:bg-yellow-400 px-8 py-4 rounded-xl font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105"
             >
               View Projects
             </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
-            <div className="text-center group">
-              <div className="flex justify-center mb-2">
-                <Users className="w-8 h-8 text-industrial-blue group-hover:scale-110 transition-transform" />
-              </div>
-              <div className="font-poppins font-bold text-2xl text-white">500+</div>
-              <div className="font-inter text-industrial-silver">Happy Clients</div>
-            </div>
-            <div className="text-center group">
-              <div className="flex justify-center mb-2">
-                <Shield className="w-8 h-8 text-industrial-blue group-hover:scale-110 transition-transform" />
-              </div>
-              <div className="font-poppins font-bold text-2xl text-white">15+</div>
-              <div className="font-inter text-industrial-silver">Years Experience</div>
-            </div>
-            <div className="text-center group">
-              <div className="flex justify-center mb-2">
-                <Award className="w-8 h-8 text-industrial-blue group-hover:scale-110 transition-transform" />
-              </div>
-              <div className="font-poppins font-bold text-2xl text-white">1000+</div>
-              <div className="font-inter text-industrial-silver">Projects Completed</div>
-            </div>
           </div>
         </div>
       </div>
