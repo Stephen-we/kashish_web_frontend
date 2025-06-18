@@ -1,3 +1,4 @@
+import VideoSection from '@/components/VideoSection';
 import { Link } from "react-router-dom";  // <-- import Link
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -7,12 +8,14 @@ import ProjectsSection from '@/components/ProjectsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
+
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
       <ServicesSection />
+      <VideoSection />
       <AboutSection />
       <ProjectsSection />
       <ContactSection />

@@ -21,27 +21,35 @@ const ContactSection = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+
+    // For phone, restrict to numbers only
+    if (name === 'phone') {
+      const numericValue = value.replace(/\D/g, '');
+      if (numericValue.length <= 10) {
+        setFormData(prev => ({ ...prev, [name]: numericValue }));
+      }
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-  
+
     try {
-      console.log("API URL:", import.meta.env.VITE_API_URL);
       const response = await fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-  
+
       if (response.ok) {
         toast({
           title: 'Message Sent Successfully!',
           description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
         });
-  
+
         setFormData({
           name: '',
           email: '',
@@ -58,7 +66,6 @@ const ContactSection = () => {
         });
       }
     } catch (error) {
-      console.error('❌ Network Error:', error);
       toast({
         title: 'Error',
         description: 'Network or server error occurred. Please try again later.',
@@ -68,7 +75,7 @@ const ContactSection = () => {
       setIsSubmitting(false);
     }
   };
-  
+
   const contactInfo = [
     {
       icon: Phone,
@@ -154,25 +161,14 @@ const ContactSection = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="+91 97633 28158"
+                    placeholder="Enter your 10-digit phone number"
                     required
                     aria-label="Phone Number"
+                    pattern="[0-9]{10}"
+                    title="Please enter a valid 10-digit phone number"
+                    maxLength={10}
                   />
                 </div>
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block font-inter font-medium text-gray-700 mb-2">Email Address *</label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="your.email@example.com"
-                  required
-                  aria-label="Email Address"
-                />
               </div>
 
               <div>

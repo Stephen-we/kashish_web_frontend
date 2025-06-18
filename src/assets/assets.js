@@ -22,9 +22,32 @@ import profile_img_2 from './profile_img_2.png';
 import profile_img_3 from './profile_img_3.png';
 
 import ss_railing from './ss_railing.jpg';
+import ss_railing1 from './ss_railing1.jpg';
+import ss_railing2 from './ss_railing2.jpg';
+import ss_railing3 from './ss_railing3.jpg';
+
 import glass_railing from './glass_railing.jpg';
+import glass_railing1 from './glass_railing1.jpg';
+import glass_railing2 from './glass_railing2.jpg';
+import glass_railing3 from './glass_railing3.jpg';
+
 import window_solution from './window-icon.jpg';
+import window_solution1 from './window_solution1.jpg';
+import window_solution2 from './window_solution2.jpg';
+import window_solution3 from './window_solution3.jpg';
+
 import custom_metal from './Custom-Metal-Fabrication.jpg';
+import custom_metal1 from './custom_metal1.jpg';
+import custom_metal2 from './custom_metal2.jpg';
+import custom_metal3 from './custom_metal3.jpg';
+
+import facade1 from './facade1.jpg';
+import facade2 from './facade2.jpg';
+import facade3 from './facade3.jpg';
+
+import fabrication1 from './fabrication1.jpg';
+import fabrication2 from './fabrication2.jpg';
+import fabrication3 from './fabrication3.jpg';
 
 export const assets = {
   logo,
@@ -48,9 +71,27 @@ export const assets = {
   profile_img_2,
   profile_img_3,
   ss_railing,
+  ss_railing1,
+  ss_railing2,
+  ss_railing3,
   glass_railing,
+  glass_railing1,
+  glass_railing2,
+  glass_railing3,
   window_solution,
+  window_solution1,
+  window_solution2,
+  window_solution3,
   custom_metal,
+  custom_metal1,
+  custom_metal2,
+  custom_metal3,
+  facade1,
+  facade2,
+  facade3,
+  fabrication1,
+  fabrication2,
+  fabrication3,
 };
 
 export const projectsData = [
@@ -61,5 +102,5 @@ export const projectsData = [
   { title: "Pride Purple", image: project_img_5 },
   { title: "Oxford Golf Resort", image: project_img_6 },
   { title: "Sukhwani Associates", image: project_img_7 },
-  { title: "Serenity Suites", image: project_img_8 }
+  { title: "Serenity Suites", image: project_img_8 },
 ];
