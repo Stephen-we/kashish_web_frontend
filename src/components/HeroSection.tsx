@@ -29,7 +29,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-steel-dark/90 via-steel-dark/75 to-steel-blue/60"></div>
       </div>
 
-      {/* Geometric Overlay Elements */}
+      {/* Decorative Elements */}
       <div className="absolute inset-0 z-10">
         <div className="absolute top-20 right-20 w-32 h-32 border border-industrial-blue/30 rotate-45 animate-pulse"></div>
         <div className="absolute bottom-40 left-20 w-24 h-24 bg-industrial-blue/10 rotate-12"></div>
@@ -45,6 +45,14 @@ const HeroSection = () => {
               Precision
             </span>
           </h1>
+
+          {/* ✅ NEW TAGLINE */}
+          <p className="font-poppins text-xl md:text-3xl text-industrial-yellow/90 tracking-wider uppercase mb-6 drop-shadow-[0_1px_1px_rgba(255,255,255,0.1)]">
+          <span className="text-industrial-blue/80">Know Us</span>{' '}
+          <span className="text-white/80">&middot;</span>{' '}
+          <span className="text-industrial-yellow/90">Know the Quality</span>
+          </p>
+
 
           <p className="font-inter text-xl md:text-2xl text-industrial-silver mb-8 max-w-3xl mx-auto leading-relaxed">
             Premium stainless steel railings, glass fabrication, and custom metal solutions for modern architecture
@@ -62,6 +70,7 @@ const HeroSection = () => {
             ))}
           </div>
 
+          {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button
               onClick={() => scrollToSection('contact')}
@@ -70,11 +79,26 @@ const HeroSection = () => {
               Get Free Quote
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
+
             <Button
               onClick={() => scrollToSection('projects')}
               className="bg-industrial-yellow text-steel-dark hover:bg-yellow-400 px-8 py-4 rounded-xl font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105"
             >
               View Projects
+            </Button>
+
+            {/* ✅ Updated Company Profile Button */}
+            <Button
+              asChild
+              className="bg-white text-industrial-blue hover:bg-gray-100 px-8 py-4 rounded-xl font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-md"
+            >
+              <a
+                href="https://drive.google.com/uc?export=view&id=1Y2hGWk6F5sk1hOBDLc0HY7Bc607dhKuO"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                📄 View Company Profile
+              </a>
             </Button>
           </div>
         </div>

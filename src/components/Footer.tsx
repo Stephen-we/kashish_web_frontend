@@ -32,26 +32,27 @@ const Footer = () => {
     <footer className="bg-steel-dark relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full" 
-             style={{
-               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-             }}
+        <div
+          className="absolute top-0 left-0 w-full h-full"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
         ></div>
       </div>
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          
+
           {/* Company Info with Logo */}
           <div className="lg:col-span-1">
-            <img 
-              src="/logo.png" 
-              alt="Kashish Enterprises Logo" 
+            <img
+              src="/logo.png"
+              alt="Kashish Enterprises Logo"
               className="h-35 w-auto mb-6"
             />
             <p className="font-inter text-industrial-silver leading-relaxed mb-6">
-              Premium stainless steel and glass fabrication specialists with over 15 years of 
+              Premium stainless steel and glass fabrication specialists with over 15 years of
               experience in delivering exceptional architectural solutions.
             </p>
 
@@ -75,7 +76,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <button 
+                  <button
                     onClick={() => scrollToSection(service.id)}
                     className="font-inter text-industrial-silver hover:text-industrial-blue transition-colors duration-200 text-left"
                   >
@@ -92,7 +93,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <button 
+                  <button
                     onClick={() => scrollToSection(link.id)}
                     className="font-inter text-industrial-silver hover:text-industrial-blue transition-colors duration-200 text-left"
                   >
@@ -109,11 +110,8 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-industrial-blue mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-inter text-white font-medium">97633 28158</p>
-                </div>
+                <p className="font-inter text-white font-medium">97633 28158</p>
               </div>
-              
               <div className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-industrial-blue mt-1 flex-shrink-0" />
                 <div>
@@ -121,7 +119,6 @@ const Footer = () => {
                   <p className="font-inter text-industrial-silver text-sm">24/7 Support</p>
                 </div>
               </div>
-              
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-industrial-blue mt-1 flex-shrink-0" />
                 <div>
@@ -135,18 +132,21 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="font-inter text-industrial-silver text-sm mb-4 md:mb-0">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="font-inter text-industrial-silver text-sm">
               © 2024 Kashish Enterprises. All rights reserved.
             </div>
+            <div className="font-inter text-industrial-silver text-sm">
+              Made with 💡 by <span className="text-industrial-blue font-semibold">Stephen Gorelal</span> | 8888099145
+            </div>
             <div className="flex items-center space-x-6">
-              <button 
+              <button
                 onClick={() => scrollToSection('contact')}
                 className="font-inter text-industrial-silver hover:text-white transition-colors text-sm"
               >
                 Privacy Policy
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('contact')}
                 className="font-inter text-industrial-silver hover:text-white transition-colors text-sm"
               >
@@ -158,7 +158,7 @@ const Footer = () => {
       </div>
 
       {/* Scroll to Top Button */}
-      <button 
+      <button
         onClick={scrollToTop}
         className="fixed bottom-6 right-6 w-12 h-12 bg-industrial-blue hover:bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-50"
       >

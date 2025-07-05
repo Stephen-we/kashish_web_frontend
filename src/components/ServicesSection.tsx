@@ -1,11 +1,18 @@
 import { useState } from 'react';
-import { Building, Shield, Wrench, Layers, Eye, Hammer, ArrowRight, X } from 'lucide-react';
+import { Building, Shield, Wrench, Layers, Eye, Hammer, ArrowRight, X, Package } from 'lucide-react';
 import { assets } from '../assets/assets';
 
 const ServicesSection = () => {
   const [activeGallery, setActiveGallery] = useState(null);
 
   const services = [
+    {
+      icon: Package,
+      title: "Sample Product",
+      description: "Explore our premium sample product showcasing quality and finish.",
+      image: assets.sample_product,
+      isSingleImage: true,
+    },
     {
       icon: Shield,
       title: "SS Railings",
@@ -47,50 +54,45 @@ const ServicesSection = () => {
       description: "Bespoke metal fabrication with precision engineering.",
       image: assets.fabrication1,
       gallery: [assets.fabrication1, assets.fabrication2, assets.fabrication3]
-    }             
+    },        
   ];
 
   return (
     <section id="services" className="py-20 bg-gradient-industrial relative overflow-hidden">
       {/* Modal Gallery */}
       {activeGallery && (
-  <div className="fixed inset-0 z-50 bg-black/90 flex items-start justify-center px-4 py-10 overflow-y-auto">
-    <div className="relative w-full max-w-6xl bg-white rounded-2xl shadow-lg p-4">
-      
-      {/* Close Button */}
-      <button
-        onClick={() => setActiveGallery(null)}
-        className="absolute top-4 right-4 z-50 text-white bg-red-600 hover:bg-red-700 rounded-full p-2 transition-all"
-      >
-        <X className="w-5 h-5" />
-      </button>
+        <div className="fixed inset-0 z-50 bg-black/90 flex items-start justify-center px-4 py-10 overflow-y-auto">
+          <div className="relative w-full max-w-6xl bg-white rounded-2xl shadow-lg p-4">
+            <button
+              onClick={() => setActiveGallery(null)}
+              className="absolute top-4 right-4 z-50 text-white bg-red-600 hover:bg-red-700 rounded-full p-2 transition-all"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <div className="mb-6">
+              <img
+                src={activeGallery[0]}
+                alt="Main Gallery"
+                className="w-full h-[60vh] sm:h-[70vh] object-cover rounded-xl"
+              />
+            </div>
+            {activeGallery.length > 1 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {activeGallery.map((img, i) => (
+                  <img
+                    key={i}
+                    src={img}
+                    alt={`Gallery ${i}`}
+                    className="w-full h-48 object-cover rounded-xl border border-gray-300 hover:scale-105 transition-transform duration-300"
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
-      {/* Main Image */}
-      <div className="mb-6">
-        <img
-          src={activeGallery[0]}
-          alt="Main Gallery"
-          className="w-full h-[60vh] sm:h-[70vh] object-cover rounded-xl"
-        />
-      </div>
-
-      {/* Thumbnails */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {activeGallery.map((img, i) => (
-          <img
-            key={i}
-            src={img}
-            alt={`Gallery ${i}`}
-            className="w-full h-48 object-cover rounded-xl border border-gray-300 hover:scale-105 transition-transform duration-300"
-          />
-        ))}
-      </div>
-     </div>
-    </div>
-   )}
-
-
-      {/* Services Section Heading */}
+      {/* Section Header */}
       <div className="container mx-auto px-4 text-center mb-16 relative z-10">
         <div className="inline-flex items-center space-x-2 bg-industrial-blue/20 backdrop-blur-sm border border-industrial-blue/30 rounded-full px-6 py-2 mb-6">
           <Wrench className="w-4 h-4 text-industrial-blue" />
@@ -108,6 +110,13 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
         {services.map((service, index) => {
           const IconComponent = service.icon;
+          const handleClick = () => {
+            if (service.isSingleImage) {
+              setActiveGallery([service.image]);
+            } else if (service.gallery) {
+              setActiveGallery(service.gallery);
+            }
+          };
           return (
             <div
               key={index}
@@ -115,7 +124,7 @@ const ServicesSection = () => {
             >
               <div
                 className="relative h-48 overflow-hidden cursor-pointer"
-                onClick={() => setActiveGallery(service.gallery)}
+                onClick={handleClick}
               >
                 <img
                   src={service.image}
@@ -127,7 +136,6 @@ const ServicesSection = () => {
                   <IconComponent className="w-6 h-6 text-industrial-blue group-hover:text-white transition-colors" />
                 </div>
               </div>
-
               <div className="p-6">
                 <h3 className="font-poppins font-bold text-xl text-white mb-3 group-hover:text-industrial-blue transition-colors">
                   {service.title}
@@ -135,18 +143,20 @@ const ServicesSection = () => {
                 <p className="font-inter text-industrial-silver leading-relaxed group-hover:text-white transition-colors">
                   {service.description}
                 </p>
-                <div className="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <span className="text-industrial-blue font-inter font-semibold text-sm flex items-center">
-                    View Gallery <ArrowRight className="ml-1 w-4 h-4" />
-                  </span>
-                </div>
+                {!service.isSingleImage && (
+                  <div className="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <span className="text-industrial-blue font-inter font-semibold text-sm flex items-center">
+                      View Gallery <ArrowRight className="ml-1 w-4 h-4" />
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           );
         })}
       </div>
 
-      {/* Call-to-Action Section */}
+      {/* CTA */}
       <div className="text-center mt-16 relative z-10">
         <div className="inline-flex items-center space-x-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-8 py-6">
           <div className="text-left">
