@@ -46,18 +46,18 @@ const HeroSection = () => {
             </span>
           </h1>
 
-          {/* ✅ NEW TAGLINE */}
+          {/* Tagline */}
           <p className="font-poppins text-xl md:text-3xl text-industrial-yellow/90 tracking-wider uppercase mb-6 drop-shadow-[0_1px_1px_rgba(255,255,255,0.1)]">
-          <span className="text-industrial-blue/80">Know Us</span>{' '}
-          <span className="text-white/80">&middot;</span>{' '}
-          <span className="text-industrial-yellow/90">Know the Quality</span>
+            <span className="text-industrial-blue/80">Know Us</span>{' '}
+            <span className="text-white/80">&middot;</span>{' '}
+            <span className="text-industrial-yellow/90">Know the Quality</span>
           </p>
-
 
           <p className="font-inter text-xl md:text-2xl text-industrial-silver mb-8 max-w-3xl mx-auto leading-relaxed">
             Premium stainless steel railings, glass fabrication, and custom metal solutions for modern architecture
           </p>
 
+          {/* Service Tags */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {['SS Railings', 'Glass Glazing', 'ACP Paneling', 'Custom Fabrication'].map((service, index) => (
               <span
@@ -70,11 +70,11 @@ const HeroSection = () => {
             ))}
           </div>
 
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 w-full max-w-2xl mx-auto">
             <Button
               onClick={() => scrollToSection('contact')}
-              className="bg-industrial-blue hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl group"
+              className="flex-1 w-full sm:w-auto bg-industrial-blue hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl group"
             >
               Get Free Quote
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -82,15 +82,14 @@ const HeroSection = () => {
 
             <Button
               onClick={() => scrollToSection('projects')}
-              className="bg-industrial-yellow text-steel-dark hover:bg-yellow-400 px-8 py-4 rounded-xl font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105"
+              className="flex-1 w-full sm:w-auto bg-industrial-yellow text-steel-dark hover:bg-yellow-400 px-8 py-4 rounded-xl font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105"
             >
               View Projects
             </Button>
 
-            {/* ✅ Updated Company Profile Button */}
             <Button
               asChild
-              className="bg-white text-industrial-blue hover:bg-gray-100 px-8 py-4 rounded-xl font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-md"
+              className="flex-1 w-full sm:w-auto bg-white text-industrial-blue hover:bg-gray-100 px-8 py-4 rounded-xl font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-md"
             >
               <a
                 href="https://drive.google.com/uc?export=view&id=1Y2hGWk6F5sk1hOBDLc0HY7Bc607dhKuO"
