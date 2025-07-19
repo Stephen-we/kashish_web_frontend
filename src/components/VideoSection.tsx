@@ -13,6 +13,8 @@ const videoFiles = [
   "showcase10.mp4",
   "showcase11.mp4",
   "showcase12.mp4",
+  "showcase13.mp4",
+  "showcase14.mp4",
     // add more video file names here
 ];
 
