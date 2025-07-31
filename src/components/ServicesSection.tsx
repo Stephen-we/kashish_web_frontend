@@ -14,6 +14,13 @@ const ServicesSection = () => {
       isSingleImage: true,
     },
     {
+      icon: Package,
+      title: "Project image",
+      description: "A glimpse of our recent project, crafted with precision and design excellence.",
+      image: assets.project_image,
+      isSingleImage: true,
+    },
+    {
       icon: Shield,
       title: "SS Railings",
       description: "Premium stainless steel railings with modern designs and superior durability.",
