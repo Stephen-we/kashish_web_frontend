@@ -50,6 +50,8 @@ import fabrication2 from './fabrication2.jpg';
 import fabrication3 from './fabrication3.jpg';
 
 import sample_product from './sample_product.jpeg'; // ✅ ADD THIS LINE
+import Project_image from './Project_image.jpeg';
+
 
 export const assets = {
   logo,
@@ -95,6 +97,7 @@ export const assets = {
   fabrication2,
   fabrication3,
   sample_product, // ✅ ADD THIS LINE TO THE EXPORT
+  Project_image, // new line added 
 };
 
 export const projectsData = [
