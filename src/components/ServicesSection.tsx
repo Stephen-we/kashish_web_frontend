@@ -17,7 +17,7 @@ const ServicesSection = () => {
       icon: Package,
       title: "Project image",
       description: "A glimpse of our recent project, crafted with precision and design excellence.",
-      image: assets.project_image,
+      image: assets.Project_image, // ✅ correct key
       isSingleImage: true,
     },
     {
