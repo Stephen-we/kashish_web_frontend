@@ -1,26 +1,33 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter, Routes, Route } from "react-router-dom";  // <-- Change here
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Index from "@/pages/Index";
+import ServicePage from "@/pages/ServicePage";
+import ScrollToTop from "./components/ScrollToTop";
 
-const queryClient = new QueryClient();
+function App() {
+  return (
+    <Router>
+      {/* Auto scroll to top on route change */}
+      <ScrollToTop />
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <HashRouter>  {/* <-- Use HashRouter instead of BrowserRouter */}
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </HashRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+      <div className="flex flex-col min-h-screen">
+        {/* Global Navbar */}
+        <Navbar />
+
+        {/* Main content */}
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/services/:serviceId" element={<ServicePage />} />
+          </Routes>
+        </main>
+
+        {/* Global Footer */}
+        <Footer />
+      </div>
+    </Router>
+  );
+}
 
 export default App;

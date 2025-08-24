@@ -1,3 +1,4 @@
+// src/assets/assets.js
 import logo from './logo.svg';
 import logo_dark from './logo_dark.svg';
 import cross_icon from './cross_icon.svg';
@@ -21,10 +22,11 @@ import profile_img_1 from './profile_img_1.png';
 import profile_img_2 from './profile_img_2.png';
 import profile_img_3 from './profile_img_3.png';
 
+// ✅ Match actual files (with underscore)
 import ss_railing from './ss_railing.jpg';
 import ss_railing1 from './ss_railing1.jpg';
-import ss_railing2 from './ss_railing2.jpg';
-import ss_railing3 from './ss_railing3.jpg';
+import ss_railing2 from './ss_railing_2.jpg';
+import ss_railing3 from './ss_railing_3.jpg';
 
 import glass_railing from './glass_railing.jpg';
 import glass_railing1 from './glass_railing1.jpg';
@@ -49,9 +51,16 @@ import fabrication1 from './fabrication1.jpg';
 import fabrication2 from './fabrication2.jpg';
 import fabrication3 from './fabrication3.jpg';
 
-import sample_product from './sample_product.jpeg'; // ✅ ADD THIS LINE
+import sample_product from './sample_product.jpeg';
 import Project_image from './project_image.jpeg';
 
+import mind_steel_12 from './mind_steel_12.jpg';
+import mind_steel_13 from './mind_steel_13.jpg';
+import mind_steel_14 from './mind_steel_14.jpg';
+
+import window_sliding_1 from './window_sliding_1.jpg';
+import window_sliding_2 from './window_sliding_2.jpg';
+import window_sliding_3 from './window_sliding_3.jpg';
 
 export const assets = {
   logo,
@@ -59,10 +68,10 @@ export const assets = {
   cross_icon,
   menu_icon,
   star_icon,
-  header_img,
-  brand_img,
   left_arrow,
   right_arrow,
+  header_img,
+  brand_img,
   project_img_1,
   project_img_2,
   project_img_3,
@@ -96,8 +105,14 @@ export const assets = {
   fabrication1,
   fabrication2,
   fabrication3,
-  sample_product, // ✅ ADD THIS LINE TO THE EXPORT
-  Project_image, // new line added 
+  sample_product,
+  Project_image,
+  mind_steel_12,
+  mind_steel_13,
+  mind_steel_14,
+  window_sliding_1,
+  window_sliding_2,
+  window_sliding_3,
 };
 
 export const projectsData = [

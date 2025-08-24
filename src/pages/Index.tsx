@@ -1,25 +1,19 @@
-import VideoSection from '@/components/VideoSection';
-import { Link } from "react-router-dom";  // <-- import Link
-import Navbar from '@/components/Navbar';
-import HeroSection from '@/components/HeroSection';
-import ServicesSection from '@/components/ServicesSection';
-import AboutSection from '@/components/AboutSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
-
+import HeroSection from "@/components/HeroSection";
+import ServicesSection from "@/components/ServicesSection"; // only preview
+import VideoSection from "@/components/VideoSection";
+import AboutSection from "@/components/AboutSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Navbar />
+    <div>
       <HeroSection />
-      <ServicesSection />
+      <ServicesSection /> {/* only preview, not full details */}
       <VideoSection />
       <AboutSection />
       <ProjectsSection />
       <ContactSection />
-      <Footer />
     </div>
   );
 };
