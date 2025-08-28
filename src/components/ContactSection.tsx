@@ -85,7 +85,7 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      value: 'kashishenterprises7@gmail.com',
+      value: 'sales.kashishenterprises@gmail.com',
       subtitle: "We'll respond within 24 hours"
     },
     {

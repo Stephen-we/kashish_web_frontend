@@ -83,6 +83,9 @@ const Navbar = () => {
           <li onClick={() => handleNavClick("home")} className="cursor-pointer hover:text-industrial-yellow">
             Home
           </li>
+          <li onClick={() => handleNavClick("about")} className="cursor-pointer hover:text-industrial-yellow">
+            About
+          </li>
           <li onClick={() => handleNavClick("projects")} className="cursor-pointer hover:text-industrial-yellow">
             Projects
           </li>
