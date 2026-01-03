@@ -70,6 +70,30 @@ const HeroSection = () => {
             ))}
           </div>
 
+          {/* Industrial / PEB Division Link */}
+        <div className="mb-10">
+          <div className="inline-flex items-center gap-3 bg-black/40 backdrop-blur-sm border border-industrial-yellow/30 px-6 py-3 rounded-2xl">
+            <span className="text-industrial-yellow font-semibold text-sm uppercase tracking-wide">
+              Industrial Projects?
+            </span>
+
+            <span className="text-white/80 text-sm hidden sm:inline">
+              Explore our PEB & Industrial Division
+            </span>
+
+            <a
+              href="https://fabricraft.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-industrial-yellow font-semibold text-sm hover:underline hover:opacity-90 transition"
+            >
+              FABRICRAFT →
+            </a>
+          </div>
+        </div>
+
+
+
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 w-full max-w-2xl mx-auto">
             <Button
