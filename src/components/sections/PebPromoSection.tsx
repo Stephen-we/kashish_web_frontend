@@ -13,7 +13,7 @@ const PebPromoSection = () => {
         </p>
 
         <a
-          href="https://fabricraft.com"
+          href="https://fabricraftengineering.in"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-industrial-yellow text-steel-dark px-8 py-4 rounded-xl font-semibold text-lg hover:scale-105 transition"

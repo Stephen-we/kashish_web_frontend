@@ -82,7 +82,7 @@ const HeroSection = () => {
             </span>
 
             <a
-              href="https://fabricraft.com"
+              href="https://fabricraftengineering.in"
               target="_blank"
               rel="noopener noreferrer"
               className="text-industrial-yellow font-semibold text-sm hover:underline hover:opacity-90 transition"
