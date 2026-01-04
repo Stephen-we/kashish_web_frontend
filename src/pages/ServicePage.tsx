@@ -1,11 +1,16 @@
 // client/src/pages/ServicePage.tsx
+
 import React from "react";
 import { useParams } from "react-router-dom";
-import Slider from "react-slick"; // react-slick carousel
+import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// ✅ Import images properly from src/assets
+// ✅ PEB PROMO SECTION
+import PebPromoSection from "@/components/sections/PebPromoSection";
+
+// Images
 import ss1 from "../assets/ss_railing.jpg";
 import ss2 from "../assets/ss_railing1.jpg";
 import ss3 from "../assets/ss_railing2.jpg";
@@ -43,24 +48,25 @@ const serviceContent: Record<
       "Low maintenance and long life",
       "Customizable modular patterns",
       "Durability of 15–25 years",
-      "Common pipe sizes: Ø38–50mm, thickness 1.5–2.5mm",
+      "Common pipe sizes: Ø38–50mm",
     ],
     layout: "default",
   },
+
   "mind-steel": {
     title: "Mind Steel",
     images: [ms1, ms2, ms3],
     description:
       "Mind Steel provides precision engineering solutions with long-lasting performance and robust strength.",
     features: [
-      "Precision engineering for strength",
+      "Precision engineering",
       "Long-lasting durability",
       "Custom fabrication options",
-      "Stylish and modern appearance",
-      "Cost-efficient steel solutions",
+      "Stylish modern appearance",
     ],
     layout: "alt",
   },
+
   "window-sliding": {
     title: "Window Sliding",
     images: [ws1, ws2, ws3],
@@ -68,24 +74,24 @@ const serviceContent: Record<
       "Premium sliding window systems designed for strength, beauty, and smooth functionality.",
     features: [
       "Smooth sliding mechanism",
-      "Strong yet lightweight frames",
-      "Noise and dust resistance",
-      "Modern aesthetic look",
-      "Weather-resistant durability",
+      "Noise & dust resistance",
+      "Weather-proof design",
+      "Modern aesthetics",
     ],
     layout: "default",
   },
+
+  // ✅ THIS IS THE IMPORTANT ONE
   "conventional-vs-peb": {
     title: "Conventional vs PEB",
     images: [peb1, peb2, peb3],
     description:
-      "Comparison between Conventional structures and Pre-Engineered Buildings (PEB) with focus on durability, cost, and construction speed.",
+      "Comparison between Conventional structures and Pre-Engineered Buildings (PEB) focusing on cost, speed, and scalability.",
     features: [
-      "PEB reduces construction time significantly",
-      "Conventional allows on-site design flexibility",
-      "PEB is cost-efficient in the long run",
-      "Conventional provides traditional robustness",
-      "PEB supports modular & scalable expansion",
+      "PEB is 40–60% faster",
+      "Lower long-term cost",
+      "Factory controlled quality",
+      "Easy future expansion",
     ],
     layout: "alt",
   },
@@ -97,13 +103,12 @@ const ServicePage: React.FC = () => {
 
   if (!service) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-xl font-semibold text-gray-600">
+      <div className="min-h-screen flex items-center justify-center text-xl font-semibold">
         Service not found
       </div>
     );
   }
 
-  // React Slick carousel settings
   const settings = {
     dots: true,
     infinite: true,
@@ -113,42 +118,39 @@ const ServicePage: React.FC = () => {
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: true,
-    adaptiveHeight: true,
   };
 
   return (
     <div className="min-h-screen pt-28 md:pt-32 px-6 pb-16 bg-gray-50">
       <div className="max-w-6xl mx-auto">
-        {/* Heading */}
-        <h1 className="text-4xl font-bold text-center mb-6 text-gray-800">
+
+        {/* Title */}
+        <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
           {service.title}
         </h1>
 
-        {/* Layout variations */}
+        {/* SERVICE CONTENT */}
         {service.layout === "default" ? (
           <>
-            {/* Carousel */}
             <Slider {...settings} className="mb-10">
-              {service.images.map((img, idx) => (
-                <div key={idx}>
-                  <img
-                    src={img}
-                    alt={`${service.title} ${idx + 1}`}
-                    className="rounded-2xl w-full h-[400px] object-cover shadow-lg"
-                  />
-                </div>
+              {service.images.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  className="rounded-2xl h-[400px] w-full object-cover"
+                />
               ))}
             </Slider>
 
-            {/* Description + Features */}
-            <div className="text-center mb-8">
-              <p className="text-lg text-gray-700">{service.description}</p>
-            </div>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 text-base max-w-3xl mx-auto">
+            <p className="text-center text-lg text-gray-700 mb-8">
+              {service.description}
+            </p>
+
+            <ul className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
               {service.features.map((f, i) => (
                 <li
                   key={i}
-                  className="p-4 bg-white rounded-xl shadow-sm border-l-4 border-blue-500"
+                  className="bg-white p-4 rounded-xl shadow border-l-4 border-blue-500"
                 >
                   {f}
                 </li>
@@ -157,21 +159,16 @@ const ServicePage: React.FC = () => {
           </>
         ) : (
           <>
-            {/* Alt Layout: Description + Carousel Side by Side on desktop */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-10">
-              {/* Left: Description */}
+            <div className="grid md:grid-cols-2 gap-10 items-center mb-10">
               <div>
-                <h2 className="text-2xl font-semibold mb-4 text-gray-700">
-                  Overview
-                </h2>
                 <p className="text-lg text-gray-600 mb-6">
                   {service.description}
                 </p>
-                <ul className="space-y-3 text-gray-700">
+                <ul className="space-y-3">
                   {service.features.map((f, i) => (
                     <li
                       key={i}
-                      className="p-3 bg-white rounded-lg shadow-sm border-l-4 border-green-500"
+                      className="bg-white p-3 rounded-lg shadow border-l-4 border-green-500"
                     >
                       {f}
                     </li>
@@ -179,21 +176,26 @@ const ServicePage: React.FC = () => {
                 </ul>
               </div>
 
-              {/* Right: Carousel */}
               <Slider {...settings}>
-                {service.images.map((img, idx) => (
-                  <div key={idx}>
-                    <img
-                      src={img}
-                      alt={`${service.title} ${idx + 1}`}
-                      className="rounded-2xl w-full h-[350px] object-cover shadow-lg"
-                    />
-                  </div>
+                {service.images.map((img, i) => (
+                  <img
+                    key={i}
+                    src={img}
+                    className="rounded-2xl h-[350px] w-full object-cover"
+                  />
                 ))}
               </Slider>
             </div>
           </>
         )}
+
+        {/* ✅ ONLY SHOW THIS FOR CONVENTIONAL VS PEB */}
+        {serviceId === "conventional-vs-peb" && (
+          <div className="mt-20">
+            <PebPromoSection />
+          </div>
+        )}
+
       </div>
     </div>
   );

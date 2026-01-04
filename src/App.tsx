@@ -4,8 +4,6 @@ import Footer from "@/components/Footer";
 import Index from "@/pages/Index";
 import ServicePage from "@/pages/ServicePage";
 import ScrollToTop from "./components/ScrollToTop";
-import HeroSection from "@/components/HeroSection";
-import PebPromoSection from "@/components/sections/PebPromoSection";
 
 
 function App() {
@@ -25,12 +23,6 @@ function App() {
             <Route path="/services/:serviceId" element={<ServicePage />} />
           </Routes>
         </main>
-
-         <>
-      <HeroSection />
-      <PebPromoSection />
-      {/* other sections */}
-      </>
 
         {/* Global Footer */}
         <Footer />
