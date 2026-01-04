@@ -121,7 +121,7 @@ const ServicePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen pt-28 md:pt-32 px-6 pb-16 bg-gray-50">
+    <div className="min-h-screen pt-24 md:pt-32 px-4 md:px-6 pb-16 bg-gray-50 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
 
         {/* Title */}
@@ -132,15 +132,18 @@ const ServicePage: React.FC = () => {
         {/* SERVICE CONTENT */}
         {service.layout === "default" ? (
           <>
-            <Slider {...settings} className="mb-10">
+            <div className="w-full overflow-hidden">
+            <Slider {...settings}>
               {service.images.map((img, i) => (
                 <img
                   key={i}
                   src={img}
-                  className="rounded-2xl h-[400px] w-full object-cover"
+                  className="rounded-2xl h-[350px] w-full object-cover"
+                  alt=""
                 />
               ))}
             </Slider>
+          </div>
 
             <p className="text-center text-lg text-gray-700 mb-8">
               {service.description}
@@ -159,7 +162,7 @@ const ServicePage: React.FC = () => {
           </>
         ) : (
           <>
-            <div className="grid md:grid-cols-2 gap-10 items-center mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-10 overflow-hidden">
               <div>
                 <p className="text-lg text-gray-600 mb-6">
                   {service.description}
