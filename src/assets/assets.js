@@ -1,5 +1,5 @@
 // src/assets/assets.js
-import logo from './logo.svg';
+import logo from './logo.png';
 import logo_dark from './logo_dark.svg';
 import cross_icon from './cross_icon.svg';
 import menu_icon from './menu_icon.svg';
