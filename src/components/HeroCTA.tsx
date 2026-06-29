@@ -9,6 +9,8 @@ import {
 
 import { Button } from "@/components/ui/button";
 
+import { trackEvent } from "@/lib/analytics";
+
 const PHONE = "9763328158";
 
 const WHATSAPP =
@@ -18,27 +20,58 @@ const COMPANY_PROFILE =
   "https://drive.google.com/uc?export=view&id=1Y2hGWk6F5sk1hOBDLc0HY7Bc607dhKuO";
 
 const callNow = () => {
+  trackEvent("call_click", {
+    button_name: "Hero Call Now",
+    location: "Hero Section",
+  });
+
   window.location.href = `tel:${PHONE}`;
 };
 
 const openWhatsApp = () => {
+  trackEvent("whatsapp_click", {
+    button_name: "Hero WhatsApp",
+    location: "Hero Section",
+  });
+
   window.open(WHATSAPP, "_blank");
 };
 
 const openCompanyProfile = () => {
+  trackEvent("company_profile_open", {
+    button_name: "Company Profile",
+    location: "Hero Section",
+  });
+
   window.open(COMPANY_PROFILE, "_blank");
 };
 
 const scrollToProjects = () => {
+  trackEvent("view_projects_click", {
+    button_name: "View Projects",
+    location: "Hero Section",
+  });
+
   document
     .getElementById("projects")
-    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    ?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
 };
 
 const scrollToContact = () => {
+  trackEvent("contact_section_open", {
+    button_name: "Get Quote",
+    location: "Hero Section",
+  });
+
   document
     .getElementById("contact")
-    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    ?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
 };
 
 const cardClass =
