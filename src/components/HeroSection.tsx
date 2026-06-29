@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import HeroCTA from "./HeroCTA";
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -95,35 +96,9 @@ const HeroSection = () => {
 
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 w-full max-w-2xl mx-auto">
-            <Button
-              onClick={() => scrollToSection('contact')}
-              className="flex-1 w-full sm:w-auto bg-industrial-blue hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl group"
-            >
-              Get Free Quote
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-
-            <Button
-              onClick={() => scrollToSection('projects')}
-              className="flex-1 w-full sm:w-auto bg-industrial-yellow text-steel-dark hover:bg-yellow-400 px-8 py-4 rounded-xl font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105"
-            >
-              View Projects
-            </Button>
-
-            <Button
-              asChild
-              className="flex-1 w-full sm:w-auto bg-white text-industrial-blue hover:bg-gray-100 px-8 py-4 rounded-xl font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-md"
-            >
-              <a
-                href="https://drive.google.com/uc?export=view&id=1Y2hGWk6F5sk1hOBDLc0HY7Bc607dhKuO"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                📄 View Company Profile
-              </a>
-            </Button>
-          </div>
+          <div className="max-w-5xl mx-auto mb-12">
+          <HeroCTA />
+      </div>
         </div>
       </div>
 

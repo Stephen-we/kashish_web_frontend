@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Index from "@/pages/Index";
 import ServicePage from "@/pages/ServicePage";
 import ScrollToTop from "./components/ScrollToTop";
+import StickyCTA from "@/components/StickyCTA";
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
       <div className="flex flex-col min-h-screen">
         {/* Global Navbar */}
         <Navbar />
+
+        <StickyCTA />
 
         {/* Main content */}
         <main className="flex-grow">
