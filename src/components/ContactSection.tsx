@@ -3,6 +3,10 @@ import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import {
+  trackQuoteRequest,
+  trackWhatsApp,
+} from "@/lib/analytics";
 import { useToast } from '@/hooks/use-toast';
 
 const ContactSection = () => {
@@ -36,8 +40,10 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
 
     try {
+      trackQuoteRequest("Contact Form");
       const response = await fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -265,7 +271,14 @@ const ContactSection = () => {
                   <p className="text-green-100 text-sm">Get instant responses to your queries</p>
                 </div>
                 <Button
-                  onClick={() => window.open('https://wa.me/919763328158', '_blank')}
+                  onClick={() => {
+                    trackWhatsApp("Contact Section");
+
+                    window.open(
+                      "https://wa.me/919763328158",
+                      "_blank"
+                    );
+                  }}
                   className="bg-white text-green-600 hover:bg-green-50 px-6 py-2 rounded-lg font-semibold"
                 >
                   Chat Now

@@ -4,9 +4,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 // ✅ PEB PROMO SECTION
 import PebPromoSection from "@/components/sections/PebPromoSection";
 
