@@ -23,7 +23,7 @@ export const trackWhatsApp = (location: string) => {
 };
 
 export const trackPhoneCall = (location: string) => {
-  trackEvent("phone_call_click", {
+  trackEvent("call_click", {
     location,
   });
 };
